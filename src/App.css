@@ -1,0 +1,100 @@
+/* src/App.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e8f5e9; 
+    color: #333; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    width: 90%;
+    max-width: 600px; 
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: white; /* Beyaz ana kart */
+}
+
+
+.header-section {
+    margin-bottom: 30px;
+}
+
+.ai-icon {
+    font-size: 3em; 
+    color: #00796B;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.game-title {
+    color: #004D40; 
+    font-size: 2em;
+    margin: 0;
+}
+
+.game-subtitle {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+/*  Kural Kartı */
+.rules-card {
+    background-color: #f7fcf7; 
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #c8e6c9; 
+    text-align: left;
+}
+
+.rules-card h2 {
+    color: #004D40;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/*  Kural Listesi */
+.rules-list {
+    list-style: none; 
+    padding: 0;
+}
+
+.rules-list li {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 5px solid #00796B; 
+    color: #333;
+    font-weight: 500;
+}
+
+/*  Başla Butonu */
+.start-button {
+    width: 100%;
+    background-color: #00796B; 
+    color: white; 
+    border: none;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 121, 107, 0.4); 
+}
+
+.start-button:hover {
+    background-color: #004D40;
+}
