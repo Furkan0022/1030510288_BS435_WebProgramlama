@@ -3,6 +3,7 @@ import './App.css';
 
 const AiIcon = '🤖'; 
 
+
 function App() {
     //  Oyunun hangi aşamada olduğu
     const [gameState, setGameState] = useState('start'); 
