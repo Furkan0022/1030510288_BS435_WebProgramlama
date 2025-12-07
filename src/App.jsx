@@ -4,6 +4,7 @@ import './App.css';
 
 const AiIcon = '🤖'; 
 
+
 function App() {
 
     const [gameState, setGameState] = useState('start'); 
