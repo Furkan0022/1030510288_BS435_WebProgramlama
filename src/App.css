@@ -1,10 +1,8 @@
-/* src/App.css */
-
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #e8f5e9; 
+    background-color: #afc7b1; 
     color: #333; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -15,12 +13,12 @@ body {
 
 .game-container {
     width: 90%;
-    max-width: 600px; 
+    max-width:800px; 
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: white; /* Beyaz ana kart */
+    background-color: snow; 
 }
 
 
@@ -30,7 +28,7 @@ body {
 
 .ai-icon {
     font-size: 3em; 
-    color: #00796B;
+    color: #09776a;
     display: block;
     margin-bottom: 10px;
 }

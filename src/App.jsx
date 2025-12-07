@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import GameScreen from './GameScreen.jsx';
 import './App.css'; 
 
 const AiIcon = '🤖'; 
 
 function App() {
-    //  Oyunun hangi aşamada olduğu
+
     const [gameState, setGameState] = useState('start'); 
     
-    //  Butona basılınca çağrılır.
     const startGame = () => {
         setGameState('game');
     };
@@ -34,7 +34,6 @@ function App() {
                     </ol>
                 </div>
                 
-                {/* Butonu Fonksiyona Bağlama */}
                 <button 
                     className="start-button"
                     onClick={startGame} 
@@ -46,11 +45,9 @@ function App() {
     } 
 
     if (gameState === 'game') {
+       
         return (
-            <div className="game-container">
-                <h1>OYUN BAŞLADI!</h1>
-                <p>Şimdi görsellerin yükleneceği ve tahminlerin yapılacağı aşamadayız.</p>
-            </div>
+            <GameScreen /> 
         );
     }
 
