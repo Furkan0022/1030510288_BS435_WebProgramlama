@@ -12,13 +12,12 @@ body {
 }
 
 .game-container {
-    width: 90%;
-    max-width:800px; 
+    width:85%;
+    max-width:1000px; 
     padding: 30px;
-    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: snow; 
+    background-color: rgb(241, 235, 235); 
 }
 
 
@@ -28,26 +27,25 @@ body {
 
 .ai-icon {
     font-size: 3em; 
-    color: #09776a;
+    color: #2a6962;
     display: block;
     margin-bottom: 10px;
 }
 
 .game-title {
-    color: #004D40; 
+    color: #056e5d; 
     font-size: 2em;
     margin: 0;
 }
 
 .game-subtitle {
-    color: #666;
-    font-size: 1.1em;
+    color: #272626;
+    font-size: 20px;
     margin-top: 5px;
 }
 
-/*  Kural Kartı */
 .rules-card {
-    background-color: #f7fcf7; 
+    background-color: #b3bbb3; 
     padding: 20px 25px;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -62,14 +60,13 @@ body {
     margin-bottom: 15px;
 }
 
-/*  Kural Listesi */
 .rules-list {
     list-style: none; 
     padding: 0;
 }
 
 .rules-list li {
-    background-color: white;
+    background-color: rgb(228, 223, 223);
     margin-bottom: 10px;
     padding: 10px 15px;
     border-radius: 8px;
@@ -78,10 +75,9 @@ body {
     font-weight: 500;
 }
 
-/*  Başla Butonu */
 .start-button {
     width: 100%;
-    background-color: #00796B; 
+    background-color: #4b948b; 
     color: white; 
     border: none;
     padding: 15px 0;
@@ -89,10 +85,75 @@ body {
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 121, 107, 0.4); 
 }
 
 .start-button:hover {
     background-color: #004D40;
 }
+
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+    gap: 30px; 
+    margin: 40px 0;
+}
+
+.image-card {
+    cursor: pointer;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.image-card img {
+    width: 250px; /* Fotoğrafları büyüttük */
+    height: 250px;
+    object-fit: cover; /* Fotoğrafın oranını bozmadan kutuyu doldurur */
+    border-radius: 12px;
+    border: 5px solid transparent; /* Seçim çerçevesi için yer açtık */
+    display: block;
+}
+
+/* Bir görsel seçildiğinde (selected) çalışacak stil */
+.image-card.selected img {
+    border-color: #00796B; /* Senin buton renginle uyumlu yeşil çerçeve */
+    transform: scale(1.08); /* Seçilince hafifçe büyür ve öne çıkar */
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.3);
+}
+
+.image-card:hover img {
+    opacity: 0.9;
+    transform: translateY(-5px); 
+}
+
+.game-message-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    min-width: 300px;
+    border: 3px solid;
+    animation: popIn 0.3s ease-out;
+}
+
+.message-success { border-color: #4CAF50; color: #2e7d32; }
+.message-error { border-color: #f44336; color: #c62828; }
+
+@keyframes popIn {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+

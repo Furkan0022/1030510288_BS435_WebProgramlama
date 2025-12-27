@@ -8,32 +8,22 @@ const shuffleArray = (array) => {
 };
 
 
-function GameScreen() {
+function GameScreen({ onBackToMenu }) {
     const [selectedImageId, setSelectedImageId] = useState(null);
     const [score, setScore] = useState(0); 
     const [lives, setLives] = useState(2); 
     const [isGameOver, setIsGameOver] = useState(false);
     const [currentData, setCurrentData] = useState(shuffleArray(roundData)); // verileri karıştırarak başlat
-
+    const [message, setMessage] = useState('');
    
     const handleImageSelect = (id) => {
         setSelectedImageId(id);
     };
 
-    const handleGuess = () => {
-        if (selectedImageId === null) {
-            alert('Lütfen önce bir görsel seçin!');
-            return;
-        }
-
-        const selectedImage = roundData.find(item => item.id === selectedImageId);
+    const handleGuess = () => {  const selectedImage = roundData.find(item => item.id === selectedImageId);
         
-        /*if (selectedImage && selectedImage.isAi) {
-            alert("Doğru!");
-            setScore(score + 1);
-        }*/
         if (selectedImage && selectedImage.isAi) {
-            alert("Doğru! Kartlar karıştırılıyor...");
+            setMessage("✅ TEBRİKLER! Doğru tahmin ettin.");
             setScore(score + 1);
             setCurrentData(shuffleArray(roundData)); // DOĞRU TAHMİNDE KARTLARI KARIŞTIR
             }
@@ -45,9 +35,12 @@ function GameScreen() {
                 setIsGameOver(true); 
                 return;
             } else {
-                alert("Yanlış! Bir hakkın gitti.");
+                setMessage("❌ Yanlış tahmin! Tekrar dene.");
             }
         }
+        setTimeout(() => {
+        setMessage('');
+        }, 3000);
         setSelectedImageId(null);
     };
 
@@ -77,22 +70,19 @@ function GameScreen() {
                     >
                         YENİDEN BAŞLA
                     </button>
+                <button 
+                className="start-button" 
+                    onClick={onBackToMenu} 
+                    style={{backgroundColor: '#607D8B', marginTop: '10px'}} 
+                >
+                ANA MENÜYE DÖN
+                </button>
+
                 </div>
             ) : (
                 <>
                     <h2>Görsel Tahmin Ekranı</h2>
                     <p>Aşağıdaki görsellerden hangisi yapay zeka ürünüdür?</p>
-
-                   {/* <div className="image-grid">
-                        {roundData.map((image) => (
-                            <ImageCard
-                                key={image.id}
-                                data={image}
-                                onSelect={handleImageSelect}
-                                isSelected={image.id === selectedImageId}
-                            />
-                        ))}
-                    </div>/*/}
 
                     <div className="image-grid">
                     {currentData.map((image) => (
@@ -101,11 +91,18 @@ function GameScreen() {
                         data={image}
                         onSelect={handleImageSelect}
                         isSelected={image.id === selectedImageId}
-        />
+                    />
                     ))}
                     </div> 
-
-
+                  
+                  
+                    {message && (
+                    <div className={`game-message-overlay ${message.includes('✅') ? 'message-success' : 
+                    'message-error'}`}>
+                    <div style={{ fontSize: '40px' }}>{message.includes('✅') ? '🎉' : '❌'}</div>
+                    {message}
+                    </div>
+                    )}      
 
                     <button
                         className="start-button"
@@ -118,6 +115,11 @@ function GameScreen() {
                 </>
             )}
         </div>
+        
+        
+
+
+
     );
 } 
 

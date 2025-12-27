@@ -16,14 +16,13 @@ function App() {
         return (
             <div className="game-container">
                 
-                {/* Başlık ve Simge */}
                 <div className="header-section">
                     <span className="ai-icon">{AiIcon}</span>
-                    <h1 className="game-title">AI mı Gerçek mi Oyunu</h1>
+                    <h1 className="game-title">AI MI GERÇEK Mİ OYUNU</h1>
                     <p className="game-subtitle">Hangi görselin yapay zeka ürünü olduğunu bulabilir misin?</p>
                 </div>
                 
-                {/* Kural Kartı */}
+             
                 <div className="rules-card">
                     <h2>Nasıl Oynanır?</h2>
                     <ol className="rules-list">
@@ -48,7 +47,7 @@ function App() {
     if (gameState === 'game') {
        
         return (
-            <GameScreen /> 
+            <GameScreen onBackToMenu={() => setGameState('start')} />
         );
     }
 
