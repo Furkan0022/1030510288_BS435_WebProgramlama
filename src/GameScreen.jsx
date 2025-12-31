@@ -91,9 +91,8 @@ function GameScreen({ onBackToMenu }) {
                     </button>
                 </div>
             ) : (
-                <>
-                    <h2>Görsel Tahmin Ekranı</h2>
-                    <p>Aşağıdaki görsellerden hangisi yapay zeka ürünüdür?</p>
+                <>   
+                    <h2>Aşağıdaki görsellerden hangisi yapay zeka ürünüdür?</h2>
 
                     <div className="image-grid">
                         {currentData.map((image) => (
