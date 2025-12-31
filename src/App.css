@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #afc7b1; 
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-attachment: fixed;
     color: #333; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -12,13 +13,16 @@ body {
 }
 
 .game-container {
-    width:85%;
-    max-width:1000px; 
+    width: 90%;
+    max-width: 850px; 
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 24px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); 
     text-align: center;
-    background-color: rgb(241, 235, 235); 
+    background-color: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(10px); 
 }
+
 
 
 .header-section {
@@ -110,18 +114,18 @@ body {
 }
 
 .image-card img {
-    width: 250px; /* Fotoğrafları büyüttük */
+    width: 250px; 
     height: 250px;
-    object-fit: cover; /* Fotoğrafın oranını bozmadan kutuyu doldurur */
+    object-fit: cover; 
     border-radius: 12px;
-    border: 5px solid transparent; /* Seçim çerçevesi için yer açtık */
+    border: 5px solid transparent; 
     display: block;
 }
 
-/* Bir görsel seçildiğinde (selected) çalışacak stil */
+
 .image-card.selected img {
-    border-color: #00796B; /* Senin buton renginle uyumlu yeşil çerçeve */
-    transform: scale(1.08); /* Seçilince hafifçe büyür ve öne çıkar */
+    border-color: #00796B; 
+    transform: scale(1.08); 
     box-shadow: 0 8px 20px rgba(0, 121, 107, 0.3);
 }
 
